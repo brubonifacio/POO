@@ -1,0 +1,27 @@
+package teste;
+
+import java.util.Scanner;
+
+public class dani {
+
+	public static void main(String[] args) {
+
+		Scanner leia = new Scanner(System.in);
+		
+		String nome;
+		int teAmo=0;
+		
+		
+		System.out.println("Digite seu nome: ");
+		nome = leia.next();
+		
+		if(teAmo == 1) {
+			System.out.println("Digite 1 para descobrir a mensagem: "+teAmo);
+		}
+		
+		
+			
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package teste;
+
+import java.util.Scanner;
+
+public class dani {
+
+	public static void main(String[] args) {
+
+		Scanner leia = new Scanner(System.in);
+		
+		String Dani;
+		String teAmo = null;
+		
+		
+		
+		Dani = leia.next();
+		
+		System.out.println("Eu amo você" +Dani);
+		
+		
+			
+		
+	}
+
+}

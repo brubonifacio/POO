@@ -1,0 +1,21 @@
+package application;
+
+import entities.Funcionario;
+import entities.Terceiro;
+
+public class CadFun {
+
+	public static void main(String[] args) {
+		
+		Funcionario func1 = new Funcionario("XO-0001", "NABUCODONOSOR", 40,14.25);
+		Funcionario terc1 = new Terceiro("XB-002","GOHAN", 5.25);
+		
+		System.out.println(func1.salario());
+		
+		
+			
+		
+
+	}
+
+}

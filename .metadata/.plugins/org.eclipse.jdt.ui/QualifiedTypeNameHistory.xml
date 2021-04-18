@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="Classes.Pessoa"/>
+    <fullyQualifiedTypeName name="entity.conta"/>
+    <fullyQualifiedTypeName name="java.util.Locale.Builder"/>
+    <fullyQualifiedTypeName name="java.util.Locale.IsoCountryCode"/>
+    <fullyQualifiedTypeName name="java.util.Locale"/>
+    <fullyQualifiedTypeName name="entities.Terceiro"/>
+    <fullyQualifiedTypeName name="entities.Funcionario"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+</qualifiedTypeNameHistroy>

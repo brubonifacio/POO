@@ -1,0 +1,104 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Console;
+import entities.Jogo;
+import entities.Produto;
+
+public class CadVendas {
+
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner leia = new Scanner(System.in);
+		char opcao = ' ';
+		
+		Produto[] produtosLoja = new Produto[10];
+		produtosLoja[0] = new Jogo("Jogo", 1, 120.50, "BATTLEFIELD");
+		produtosLoja[1] = new Jogo("Jogo", 2, 110.75, "MORTAL KOMBAT");
+		produtosLoja[2] = new Jogo("Jogo", 3, 70.25, "MINECRAFT");
+		produtosLoja[3] = new Jogo("Jogo", 4, 90.55, "THE SIMS4");
+		produtosLoja[4] = new Jogo("Jogo", 5, 250.85, "MARIO PART9");
+		produtosLoja[5] = new Jogo("Jogo", 6, 20.50, "FIFA 2021");
+		produtosLoja[6] = new Console("Console", 7, 1200.55, "NINTENDO");
+		produtosLoja[7] = new Console("Console", 8, 2500.80, "PC GAMER");
+		produtosLoja[8] = new Console("Console", 9, 4200.90, "PLAYSTAION");
+		produtosLoja[9] = new Console("Console", 10, 2780.15, "X-BOX ONE");
+		
+		do {
+			
+			System.out.println("NOME DA LOJA\n");
+			System.out.print("Olá, selecione a categoria desejada [1-JOGO | 2-CONSOLE | OU 3-SAIR]: ");
+			opcao = leia.next().charAt(0);
+			
+			switch(opcao) {
+				case '1':
+					System.out.println();
+					System.out.println("\nOs jogos dísponiveis são: \n");
+					System.out.println("Cod \tNome do Jogo \t\tValor Uni. \tEstoque");
+					
+					for(int indice = 0; indice <= 5; indice++) {
+						Jogo jogo = (Jogo) produtosLoja[indice];
+						System.out.print(jogo.getCodigo());
+						System.out.print("\t" + jogo.getNome());
+						System.out.print("\t\t" + jogo.getValorUnitario());
+						System.out.println("\t\t" + jogo.getQtdeEstoque());
+					}
+					
+					System.out.print("\nEscolha o Cod do jogo (numeros): ");
+					String codProduto = leia.next();
+					// Verificar o cod do produto
+					// Se CodProduto for 0 não adiciona nada 
+					// Se CodProduto for um código válido pergunta quantas unidade o usuário quer
+					//		Perguntar ao usuário a quantidade que ele quer comprar
+					// 		Analisar se a quantidade do usuário é valida de acordo com o estoque
+					//			(adicionar produto na compra)
+					// se não for um CodProduto válido ou 0 indicar que o usuário digitou errado e pedir de novo o CodProduto
+					break;
+					
+					
+				case '2':
+					System.out.println();
+					System.out.println("\nOs consoles disponíveis são: \n");
+					System.out.println("Cod \tConsole \t\tValor Uni. \tEstoque"); 
+					
+					for(int indice = 6; indice <= 9; indice++) {
+						Console console = (Console) produtosLoja[indice];
+						System.out.print(console.getCodigo());
+						System.out.print("\t" + console.getMarca());
+						System.out.print("\t\t" + console.getValorUnitario());
+						System.out.println("\t\t" + console.getQtdeEstoque());
+					}
+					
+					System.out.print("\nEscolha o Cod do console (numeros): ");
+					String codConsole = leia.next();
+					// Verificar o cod do produto
+					// Se CodConsole for 0 não adiciona nada 
+					// Se CodConsole for um código válido pergunta quantas unidade o usuário quer
+					//      Perguntar ao usuário a quantidade que ele quer comprar
+					// 		Analisar se a quantidade do usuário é valida de acordo com o estoque
+					//			(adicionar produto na compra)
+					// se não for um CodProduto válido ou 0 indicar que o usuário digitou errado e pedir de novo o CodProduto
+					break;
+					
+				case '3':
+					System.out.print("Você escolheu sair\n");
+					// --- Finalizar a compra ---
+					// Perguntar a forma de pagamento
+					// Perguntas as parcelas se a forma de pagamento for no crédito (lembrando que as parcelas só pode ser 1 ou 2)
+					// Finalizar a compra
+					// Emitir nota
+					break;
+					
+				default:
+					System.out.print("Você não selecionou uma opção válida. Tente novamente.\n");
+					break;
+			}
+		} while (opcao != '3');
+
+	}
+
+}

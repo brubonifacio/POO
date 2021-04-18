@@ -1,0 +1,93 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Console;
+import entities.Jogo;
+import entities.Produto;
+
+	public class CadVendas {
+
+	public static void main(String[] args) {
+				
+				Locale.setDefault(Locale.US);
+				Scanner leia = new Scanner(System.in);
+				
+				char opcao = ' ';
+				
+				Produto[] produtosLoja = new Produto[10];
+				produtosLoja[0] = new Jogo("Jogo", "1", 120.50, "BATTLEFIELD");
+				produtosLoja[1] = new Jogo("Jogo", "2", 110.75, "MORTAL KOMBAT");
+				produtosLoja[2] = new Jogo("Jogo", "3", 70.25, "MINECRAFT");
+				produtosLoja[3] = new Jogo("Jogo", "4", 90.55, "THE SIMS4");
+				produtosLoja[4] = new Jogo("Jogo", "5", 250.85, "MARIO PART9");
+				produtosLoja[5] = new Jogo("Jogo", "6", 20.50, "FIFA 2021");
+				produtosLoja[6] = new Console("Console", "7", 1200.55, "NINTENDO");
+				produtosLoja[7] = new Console("Console", "8", 2500.80, "PC GAMER");
+				produtosLoja[8] = new Console("Console", "9", 4200.90, "PLAYSTAION");
+				produtosLoja[9] = new Console("Console", "10", 2780.15, "X-BOX 360");
+				
+				
+				do {
+					
+					System.out.println("NOME DA LOJA\n");
+					System.out.println("Olá, selecione a categoria desejada [1-Jogo | 2-Console ou 3-Sair]");
+					System.out.println();
+					System.out.print("Digite o código da opção selecionada: ");
+					opcao = leia.next().charAt(0);
+					
+					if (opcao == '1')
+					{
+						System.out.println();
+						System.out.print("\nOs jogos dísponiveis são: \n");
+						System.out.println("Cod \tNome do Jogo \t\tValor Uni. \tEstoque");
+						
+						for(int indice = 0; indice <= 5; indice++) {
+							Jogo jogo = (Jogo) produtosLoja[indice];
+							System.out.print(jogo.getCodigo());
+							System.out.print("\t" + jogo.getNome());
+							System.out.print("\t\t" + jogo.getValorUnitario());
+							System.out.println("\t\t" + jogo.getQtdeEstoque());
+						}
+						
+						System.out.print("\nEscolha o Cod do jogo (numeros): ");
+						String codProduto = leia.next();
+					}
+					
+					else if (opcao == '2')
+					{
+						System.out.println();
+						System.out.println("\nOs consoles disponíveis são: \n");
+						System.out.println("Cod \tMarca do Console \t\tValor Uni. \tEstoque"); 
+						
+						for(int indice = 6; indice <= 9; indice++) {
+							Console console = (Console) produtosLoja[indice];
+							System.out.print(console.getCodigo());
+							System.out.print("\t" + console.getMarca());
+							System.out.print("\t\t\t" + console.getValorUnitario());
+							System.out.println("\t\t" + console.getQtdeEstoque());
+						}
+						
+						System.out.print("\nEscolha o Cod do console (numeros): ");
+						String codConsole = leia.next();
+						
+					}
+					else if (opcao == '3')
+					{
+						System.out.println("Você escolheu sair\n");
+					}
+					else
+					{
+						System.out.println("Você não selecionou uma opção válida. Tente novamente.");
+					}
+				} while (opcao != '3');
+
+
+			}
+
+		}
+		
+	}
+
+}
